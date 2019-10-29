@@ -109,7 +109,7 @@
                                 <div class="layui-form-item">
 											<label class="layui-form-label">具体职业:</label>
 											<div class="layui-input-block">
-												<select lay-verify="required" name="resume_specificwork">
+												<select lay-verify="required" >
                                                    <option value="1" selected>java</option>
                                                    <option value="2">php</option>
                                                    <option value="3">c++</option>
@@ -125,7 +125,7 @@
                                 <div class="layui-form-item">
                                     <label class="layui-form-label">工作经历:</label>
                                     <div class="layui-input-block">
-                                       <input type="text" name="jobtime" class="layui-input" id="test15" placeholder="请选择始末时间" required="required" />
+                                       <input type="text" name="time" class="layui-input" id="test15" placeholder="请选择始末时间" required="required" />
                                     </div>
                                 </div>
                                 <div class="layui-form-item">
@@ -407,36 +407,32 @@
                 }
             });
         });
-        
-    //获取数据
-//  var arr{};
-//  $("#next").click()function(){
-//  	
-//  function getFormData(formId){
-//  var data = {};
-//  var results = $(formId).serializeArray();
-//  $.each(results,function(index,item){
-//      //文本表单的值不为空才处理
-//      if(item.value && $.trim(item.value)!=""){
-//          if(!data[item.name]){
-//              data[item.name]=item.value;
-//          }else{
-//              //name属性相同的表单，值以英文,拼接
-//              data[item.name]=data[item.name]+','+item.value;
-//          }
-//      }
-//  });
-//  //console.log(data);
-//  return data;
-//
+                //获取数据
+                var arr=[];
+                $("#btu1").click(function () {
+                    console.log($("#f1").serialize());
+                     var jobinformation={};
+                     arr.push(jobinformation);
+                })
 
-    	
-  //      console.log($(#f1).serialize());
-       //  console.log($(#f4).serialize());
-        
-        
-         
-   // }
+                $("#btu2").click(function () {
+                    console.log($("#f2").serialize());
+                    var jobinformation={};
+                    arr.push(jobinformation);
+                })
+
+
+
+
+
+
+
+
+
+
+
+
+                   
     </script>
 </body>
 </html>

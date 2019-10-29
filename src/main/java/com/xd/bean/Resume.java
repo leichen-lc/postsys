@@ -4,7 +4,7 @@ public class Resume {
    private Integer resume_id;//简历编号
    private String  resume_workstatus;// 工作状态
    private String  resume_workdirection;//职业方向
-   private String  resume_specificwork;// 具体工作
+   private Integer  resume_jobs;// 具体工作
    private Integer resume_skill;// 技能
    private Integer resume_works;//  个人作品
    private String resume_introduce;// 个人介绍
@@ -13,11 +13,11 @@ public class Resume {
     public Resume() {
     }
 
-    public Resume(Integer resume_id, String resume_workstatus, String resume_workdirection, String resume_specificwork, Integer resume_skill, Integer resume_works, String resume_introduce, Integer resume_person) {
+    public Resume(Integer resume_id, String resume_workstatus, String resume_workdirection, Integer resume_jobs, Integer resume_skill, Integer resume_works, String resume_introduce, Integer resume_person) {
         this.resume_id = resume_id;
         this.resume_workstatus = resume_workstatus;
         this.resume_workdirection = resume_workdirection;
-        this.resume_specificwork = resume_specificwork;
+        this.resume_jobs = resume_jobs;
         this.resume_skill = resume_skill;
         this.resume_works = resume_works;
         this.resume_introduce = resume_introduce;
@@ -48,12 +48,12 @@ public class Resume {
         this.resume_workdirection = resume_workdirection;
     }
 
-    public String getResume_specificwork() {
-        return resume_specificwork;
+    public Integer getResume_jobs() {
+        return resume_jobs;
     }
 
-    public void setResume_specificwork(String resume_specificwork) {
-        this.resume_specificwork = resume_specificwork;
+    public void setResume_jobs(Integer resume_jobs) {
+        this.resume_jobs = resume_jobs;
     }
 
     public Integer getResume_skill() {
@@ -94,7 +94,7 @@ public class Resume {
                 "resume_id=" + resume_id +
                 ", resume_workstatus='" + resume_workstatus + '\'' +
                 ", resume_workdirection='" + resume_workdirection + '\'' +
-                ", resume_specificwork='" + resume_specificwork + '\'' +
+                ", resume_jobs=" + resume_jobs +
                 ", resume_skill=" + resume_skill +
                 ", resume_works=" + resume_works +
                 ", resume_introduce='" + resume_introduce + '\'' +
