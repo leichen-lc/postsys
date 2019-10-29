@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.xd.dao.SignDao">
+
+    <select id="findAll" resultType="project">
+        select * from project
+    </select>
+   <select id="findByid" parameterType="Integer">
+       select project_introduce,project_file from project where project_id=#{project_id}
+   </select>
+    <select id="findRes" resultType="resume">
+        select * from resume
+    </select>
+
+    <insert id="addJob" parameterType="jobInformation">
+       insert into jobinformation values (#{project_id},#{project_name},#{project_butget},#{project_introduce},#{project_file},#{project_publisher})
+    </insert>
+
+    <insert id="addEdu" parameterType="education">
+        insert into education values(#{education_id},#{education_start},#{education_end},#{school_name},#{profession},#{education_level},#{education_person})
+    </insert>
+
+    <insert id="addRes" parameterType="resume">
+        insert into resume values (#{resume_id},#{resume_workstatus},#{resume_workdirection},#{resume_specificwork},#{resume_skill},#{resume_works},#{resume_introduce},#{resume_person)
+    </insert>
+    <insert id="addSki" parameterType="skills">
+        insert  into skills values (#{skill_id},#{skill_evaluate},#{skill_person})
+    </insert>
+
+    <insert id="addWor" parameterType="works">
+         insert into Works values (#{works_id},#{works_name},#{works_trade},#{works_keyword},#{works_href},#{works_duty},#{works_image},#{works_person})
+    </insert>
+
+    <insert id="addIde" parameterType="identification">
+          insert  into identification values (#{identity_id},#{identity_card},#{identity_image},#{Identity_status},#{identity_person})
+    </insert>
+</mapper>
