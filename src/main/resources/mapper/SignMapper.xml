@@ -12,7 +12,7 @@
     <select id="findAll" resultType="project" >
         select * from project
     </select>
-   <select id="findByid" parameterType="Integer">
+   <select id="findByid" parameterType="Integer" resultType="project">
        select project_introduce,project_file from project where project_id=#{project_id}
    </select>
     <select id="findRes" resultType="resume">

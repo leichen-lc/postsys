@@ -25,7 +25,7 @@
 <a:forEach var="b" items="${list}">
     <td >${b.project_id}</td>
     <td>${b.project_name}</td>
-    <td>${b.project_butget}</td>
+    <td>${b.project_budget}</td>
     <td>${b.project_introduce}</td>
     <td><a href="/detial?project_id=${b.project_id}">项目详情</a></td>
     </tr>

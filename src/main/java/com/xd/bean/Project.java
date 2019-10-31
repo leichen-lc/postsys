@@ -3,7 +3,7 @@ package com.xd.bean;
 public class Project {
     private  Integer project_id;//项目编号
     private String project_name;//项目名称
-    private Double project_butget;//项目预算
+    private Double project_budget;//项目预算
     private  String project_introduce;//项目介绍
     private  String project_file;//项目文档
     private Integer project_publisher;//项目发布者
@@ -11,10 +11,10 @@ public class Project {
     public Project() {
     }
 
-    public Project(Integer project_id, String project_name, Double project_butget, String project_introduce, String project_file, Integer project_publisher) {
+    public Project(Integer project_id, String project_name, Double project_budget, String project_introduce, String project_file, Integer project_publisher) {
         this.project_id = project_id;
         this.project_name = project_name;
-        this.project_butget = project_butget;
+        this.project_budget = project_budget;
         this.project_introduce = project_introduce;
         this.project_file = project_file;
         this.project_publisher = project_publisher;
@@ -36,12 +36,12 @@ public class Project {
         this.project_name = project_name;
     }
 
-    public Double getProject_butget() {
-        return project_butget;
+    public Double getProject_budget() {
+        return project_budget;
     }
 
-    public void setProject_butget(Double project_butget) {
-        this.project_butget = project_butget;
+    public void setProject_budget(Double project_budget) {
+        this.project_budget = project_budget;
     }
 
     public String getProject_introduce() {
@@ -73,7 +73,7 @@ public class Project {
         return "Project{" +
                 "project_id=" + project_id +
                 ", project_name='" + project_name + '\'' +
-                ", project_butget=" + project_butget +
+                ", project_budget=" + project_budget +
                 ", project_introduce='" + project_introduce + '\'' +
                 ", project_file='" + project_file + '\'' +
                 ", project_publisher=" + project_publisher +
