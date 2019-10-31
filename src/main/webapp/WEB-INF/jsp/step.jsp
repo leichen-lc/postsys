@@ -1,14 +1,19 @@
-<!DOCTYPE html>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false" %>
+<%@taglib prefix="a" uri="http://java.sun.com/jsp/jstl/core"  %>
 <html>
 <head>
-    <meta charset="utf-8">
     <title>入驻平台</title>
     <meta name="renderer" content="webkit">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">    
-    <link href="../step/layui/css/layui.css" rel="stylesheet"/>
-    <link href="../step/step-lay/step.css" rel="stylesheet">
+    <%--<link href="step/layui/css/layui.css" rel="stylesheet"/>--%>
+    <%--<link href="step/step-lay/step.css" rel="stylesheet">--%>
+    <link href="../../step/layui/css/layui.css" rel="stylesheet">
+    <link href="../../step/step-lay/step.css" rel="stylesheet">
+<%--
     <script src="layui/jquery-1.12.3.min.js"></script>
+--%>
+    <script src="../../step/layui/jquery-3.4.1.min.js"></script>
 </head>
 <body>
     <div class="layui-fluid">
@@ -16,22 +21,24 @@
             <div class="layui-card-body" style="padding-top: 40px;">
                 <div class="layui-carousel" id="stepForm" lay-filter="stepForm" style="margin: 0 auto;">
                     <div carousel-item>
+
                         <div>
-                            <form class="layui-form" style="margin: 0 auto;max-width: 460px;padding-top: 40px;" id="f1">
+
+                            <form class="layui-form" style="margin: 0 auto;max-width: 460px;padding-top: 40px;" id="f1" enctype="multipart/form-data">
                                 <div class="layui-form-item">
                                     <label class="layui-form-label">工作时间:</label>
                                     <div class="layui-input-block">
                                         <input type="text" name="job_time"  class="layui-input" id="test9" placeholder="请选择可工作时间(工作日)" required="required" />
- 
+
                                     </div>
                                     <div class="layui-input-block">
                                         <input type="text" name="job_untime" class="layui-input" id="test10" placeholder="请选择可工作时间(非工作日)" required="required" />
-  
+
                                     </div>
                                 </div>
-                             
-                                
-                                
+
+
+
                                 <div class="layui-form-item" id="area-picker">
                                     <label class="layui-form-label">工作地址:</label>
                                     <div class="layui-input-block">
@@ -58,18 +65,18 @@
                                     <label class="layui-form-label">工作时长:</label>
                                     <div class="layui-input-block">
                                  	<input type="number" name="job_hours" placeholder="请填写每周可提供的工作时长(小时)" class="layui-input" lay-verify="number" required="required">
- 
+
                                     </div>
                                 </div>
-                                
+
                                  <div class="layui-form-item">
                                     <label class="layui-form-label">工作日薪:</label>
                                     <div class="layui-input-block">
                                  	<input type="number" name="job_daysal" placeholder="请填写工作日薪" class="layui-input" lay-verify="number" required="required">
- 
+
                                     </div>
                                 </div>
-                                
+
                                 <div class="layui-form-item">
                                     <div class="layui-input-block">
                                         <button class="layui-btn" lay-submit lay-filter="formStep" id="btu1">
@@ -78,6 +85,7 @@
                                     </div>
                                 </div>
                             </form>
+
                         </div>
                         <div>
                             <form class="layui-form" style="margin: 0 auto;max-width: 460px;padding-top: 40px;" id="f2">
@@ -89,7 +97,7 @@
                                                    <option value="2">兼职</option>
                                                 </select>
                                             </div>
-                                </div>            
+                                </div>
                                 <div class="layui-form-item">
                                     <label class="layui-form-label">职业方向:</label>
 											<div class="layui-input-block">
@@ -109,7 +117,7 @@
                                 <div class="layui-form-item">
 											<label class="layui-form-label">具体职业:</label>
 											<div class="layui-input-block">
-												<select lay-verify="required" >
+												<select lay-verify="required" name="resume_jobs">
                                                    <option value="1" selected>java</option>
                                                    <option value="2">php</option>
                                                    <option value="3">c++</option>
@@ -121,7 +129,7 @@
                                                    <option value="9">其他</option>
                                                    </select>
 											</div>
-								</div>			
+								</div>
                                 <div class="layui-form-item">
                                     <label class="layui-form-label">工作经历:</label>
                                     <div class="layui-input-block">
@@ -164,7 +172,7 @@
                                     <input type="text" name="education_level" class="layui-input"  placeholder="请输入学历" required="required" />
                                     </div>
                                 </div>
-                                
+
                                 <div class="layui-form-item">
                                     <div class="layui-input-block">
                                         <button type="button" class="layui-btn layui-btn-primary pre">上一步</button>
@@ -176,65 +184,65 @@
                             </form>
                         </div>
                         <div>
-                            <form class="layui-form" style="margin: 0 auto;max-width: 460px;padding-top: 40px;" id="f3">
+                            <form class="layui-form" style="margin: 0 auto;max-width: 460px;padding-top: 40px;" enctype="multipart/form-data" method="post"id="f3">
                                 <div class="layui-form-item">
                                     <label class="layui-form-label">技能名称:</label>
                                     <div class="layui-input-block">
                                         <input type="text" name="skill_name" class="layui-input"  placeholder="请输入技能名称" required="required" />
- 
+
                                     </div>
-                                    
+
                                 </div>
-                                
+
                                  <div class="layui-form-item">
                                     <label class="layui-form-label">经验自评:</label>
                                     <div class="layui-input-block">
                                         <input type="text" name="skill_evaluate" class="layui-input"  placeholder="请评价(1~5分)" required="required" />
- 
+
                                     </div>
-                                    
+
                                 </div>
                                  <div class="layui-form-item">
                                     <label class="layui-form-label">作品名称:</label>
                                     <div class="layui-input-block">
                                         <input type="text"  name="works_name" class="layui-input"  placeholder="请输入作品名称" required="required" />
- 
+
                                     </div>
-                                    
+
                                 </div>
                                  <div class="layui-form-item">
                                     <label class="layui-form-label">作品所属行业:</label>
                                     <div class="layui-input-block">
                                         <input type="text" name="works_trade" class="layui-input"  placeholder="请输入所属行业" required="required" />
- 
+
                                     </div>
-                                    
+
                                 </div>
                                  <div class="layui-form-item">
                                     <label class="layui-form-label">作品关键词:</label>
                                     <div class="layui-input-block">
                                         <input type="text" name="works_keyword" class="layui-input"  placeholder="请输入作品关键词" required="required" />
- 
+
                                     </div>
-                                    
+
                                 </div>
                                  <div class="layui-form-item">
                                     <label class="layui-form-label">作品链接:</label>
                                     <div class="layui-input-block">
                                         <input type="text" name="works_href" class="layui-input"  placeholder="请输入作品链接" required="required" />
- 
+
                                     </div>
-                                    
+
                                 </div>
                                  <div class="layui-form-item">
                                     <label class="layui-form-label">作品图片:</label>
                                     <div class="layui-input-block">
-                                        <input type="file" dirname="works_image" class="layui-input" name="workstu"  required="required" />
- 
+                                        <input type="file"  class="layui-input" name="workstu"  required="required" />
+
                                     </div>
-                                    
+
                                 </div>
-                                
+
                                 <div class="layui-form-item">
                                     <div class="layui-input-block">
                                         <button type="button" class="layui-btn layui-btn-primary pre">上一步</button>
@@ -245,34 +253,34 @@
                                 </div>
                          </form>
                       </div>
-                      
+
                      <div>
-                            <form class="layui-form" style="margin: 0 auto;max-width: 460px;padding-top: 40px;" id="f4">
+                            <form class="layui-form" style="margin: 0 auto;max-width: 460px;padding-top: 40px;" enctype="multipart/form-data" method="post" id="f4">
                                 <div class="layui-form-item">
                                     <label class="layui-form-label">姓名:</label>
                                     <div class="layui-input-block">
                                         <input type="text" name="name" class="layui-input"  placeholder="请输入姓名" required="required" />
- 
+
                                     </div>
-                                    
-                                </div>  
+
+                                </div>
                                 <div class="layui-form-item">
                                     <label class="layui-form-label">身份证号:</label>
                                     <div class="layui-input-block">
-                                        <input type="text" name="idcard" class="layui-input"  placeholder="请输入姓名" required="required" />
- 
+                                        <input type="text" name="identity_card" class="layui-input"  placeholder="请输入姓名" required="required" />
+
                                     </div>
-                                    
-                                </div>  
+
+                                </div>
                                 <div class="layui-form-item">
                                     <label class="layui-form-label">上传图像:</label>
                                     <div class="layui-input-block">
-                                        正面    <input type="file" dirname="idzheng" class="layui-input"  name="iden0" required="required" />
-                                        反面<input type="file" dirname="idfan" class="layui-input" name="iden1" required />
+                                        正面    <input type="file" dirname="idzheng" class="layui-input"  name="workstu1" required="required" />
+                                        反面<input type="file" dirname="idfan" class="layui-input" name="workstu2" required />
                                     </div>
-                                    
-                                </div>  
-                               
+
+                                </div>
+
                                     <div class="layui-form-item">
                                     <div class="layui-input-block">
                                         <button type="button" class="layui-btn layui-btn-primary pre">上一步</button>
@@ -283,7 +291,7 @@
                                 </div>
                          </form>
                       </div>
-                      
+
                         <div>
                             <div style="text-align: center;margin-top: 90px;" >
                                 <i class="layui-icon layui-circle"
@@ -302,8 +310,8 @@
             </div>
         </div>
     </div>
-    <script src="../step/layui/layui.js"></script>
-    <script src="../step/step-lay/step.js"></script>
+    <script src="step/layui/layui.js"></script>
+    <script src="step/step-lay/step.js"></script>
     <script>
     
         layui.config({
@@ -407,19 +415,88 @@
                 }
             });
         });
-                //获取数据
-                var arr=[];
+
+
+
+        //给jQuery添加一个方法
+        jQuery.fn.serializeObject = function () {
+            var formData = {};
+            var formArray = this.serializeArray();
+            for(var i = 0, n = formArray.length; i < n; ++i){
+                formData[formArray[i].name] = formArray[i].value;
+            }
+            return formData;
+        };
+
+                 var arr={};
+
                 $("#btu1").click(function () {
-                    console.log($("#f1").serialize());
-                     var jobinformation={};
-                     arr.push(jobinformation);
+                    var job=$("#f1").serializeObject();
+                    arr.job=job;
+
+
                 })
 
                 $("#btu2").click(function () {
-                    console.log($("#f2").serialize());
-                    var jobinformation={};
-                    arr.push(jobinformation);
+                    var res=$("#f2").serializeObject();
+                    arr.res=res;
                 })
+                $("#btu3").click(function () {
+                   // var wor=new FormData($("#f3")[0]);
+                    var wor=$("#f3").serializeObject();
+                    arr.wor=wor;
+
+
+                })
+                $("#btu4").click(function () {
+                    var ide=$("#f4").serializeObject();
+                    arr.ide=ide;
+
+                    var fm=new FormData();
+                    var files=$("[name=workstu]")[0];
+                    var files1=$("[name=workstu1]")[0];
+                    var files2=$("[name=workstu2]")[0];
+                    console.log(files.files[0]);
+                    console.log(files1.files[0]);
+                    console.log(files2.files[0]);
+                    fm.append("files",files.files[0]);
+                    fm.append("files",files1.files[0]);
+                    fm.append("files",files2.files[0]);
+
+                    console.log(arr);
+                    $.ajax({
+
+
+                        type:"post",
+                        url:"add2",
+                        data:fm,
+                        contentType : false,
+                        processData : false,
+                        success:function (data) {
+
+
+                            $.ajax({
+                                 type:"post",
+                                url:"add",
+                                contentType:"application/json;charset:utf-8",
+                                data:JSON.stringify(arr),
+                                success:function (data) {
+                                console.log(data);
+                                alert("success");
+                                }
+
+
+                            });
+
+                        }
+
+
+
+                    })
+                })
+
+
+
 
 
 

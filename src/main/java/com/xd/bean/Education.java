@@ -4,8 +4,8 @@ import java.util.Date;
 
 public class Education {
    private Integer education_id;//编号
-   private Date education_date;//时间
-   //private Date education_end;// 结束时间
+   private String education_date;//时间
+
    private String school_name;//  学校名称
    private String profession;//专业
    private String education_level;//学历层次
@@ -14,10 +14,9 @@ public class Education {
     public Education() {
     }
 
-    public Education(Integer education_id, Date education_date, String school_name, String profession, String education_level, Integer education_person) {
+    public Education(Integer education_id, String education_date, String school_name, String profession, String education_level, Integer education_person) {
         this.education_id = education_id;
         this.education_date = education_date;
-
         this.school_name = school_name;
         this.profession = profession;
         this.education_level = education_level;
@@ -32,12 +31,12 @@ public class Education {
         this.education_id = education_id;
     }
 
-    public Date getEducation_start() {
+    public String getEducation_date() {
         return education_date;
     }
 
-    public void setEducation_start(Date education_start) {
-        this.education_date = education_start;
+    public void setEducation_date(String education_date) {
+        this.education_date = education_date;
     }
 
     public String getSchool_name() {
@@ -76,7 +75,7 @@ public class Education {
     public String toString() {
         return "Education{" +
                 "education_id=" + education_id +
-                ", education_start=" + education_date +
+                ", education_date='" + education_date + '\'' +
                 ", school_name='" + school_name + '\'' +
                 ", profession='" + profession + '\'' +
                 ", education_level='" + education_level + '\'' +

@@ -24,14 +24,24 @@ public class SignServiceImpl implements SignService {
     }
 
     @Override
-    public List<Resume> findRes() {
-        return sd.findRes();
+    public List<Resume> findRes(Integer resume_person) {
+        return sd.findRes(resume_person);
+    }
+
+    @Override
+    public Integer findId(String user_email) {
+        return sd.findId(user_email);
     }
 
 
     @Override
     public boolean addJob(JobInformation job) {
         return sd.addJob(job);
+    }
+
+    @Override
+    public boolean addJobs(Jobs jobs) {
+        return sd.addJobs(jobs);
     }
 
     @Override

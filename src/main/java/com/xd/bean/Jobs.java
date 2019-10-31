@@ -2,17 +2,18 @@ package com.xd.bean;
 
 import java.util.Date;
 
-public class jobs {
+public class Jobs {
     private Integer jobs_id;
-    private Date time;
+    private String time;
     private String  company;
     private String position;
     private Integer jobs_user;
 
-    public jobs() {
+    public Jobs() {
+
     }
 
-    public jobs(Integer jobs_id, Date time, String company, String position, Integer jobs_user) {
+    public Jobs(Integer jobs_id, String time, String company, String position, Integer jobs_user) {
         this.jobs_id = jobs_id;
         this.time = time;
         this.company = company;
@@ -28,11 +29,11 @@ public class jobs {
         this.jobs_id = jobs_id;
     }
 
-    public Date getTime() {
+    public String getTime() {
         return time;
     }
 
-    public void setTime(Date time) {
+    public void setTime(String time) {
         this.time = time;
     }
 
@@ -62,9 +63,9 @@ public class jobs {
 
     @Override
     public String toString() {
-        return "jobs{" +
+        return "Jobs{" +
                 "jobs_id=" + jobs_id +
-                ", time=" + time +
+                ", time='" + time + '\'' +
                 ", company='" + company + '\'' +
                 ", position='" + position + '\'' +
                 ", jobs_user=" + jobs_user +

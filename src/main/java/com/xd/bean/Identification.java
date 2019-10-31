@@ -3,17 +3,19 @@ package com.xd.bean;
 public class Identification {
    private Integer  identity_id;//认证编号
    private String  identity_card;//身份证号
-   private String identity_image;//身份证正反面
-   private Integer  Identity_status;// 认证状态
+   private  String workstu1;//身份证正面
+   private  String workstu2;//身份证反面
+    private Integer Identity_status;//认证状态
    private Integer  identity_person;//所属人
 
     public Identification() {
     }
 
-    public Identification(Integer identity_id, String identity_card, String identity_image, Integer identity_status, Integer identity_person) {
+    public Identification(Integer identity_id, String identity_card, String workstu1, String workstu2, Integer identity_status, Integer identity_person) {
         this.identity_id = identity_id;
         this.identity_card = identity_card;
-        this.identity_image = identity_image;
+        this.workstu1 = workstu1;
+        this.workstu2 = workstu2;
         Identity_status = identity_status;
         this.identity_person = identity_person;
     }
@@ -34,12 +36,20 @@ public class Identification {
         this.identity_card = identity_card;
     }
 
-    public String getIdentity_image() {
-        return identity_image;
+    public String getWorkstu1() {
+        return workstu1;
     }
 
-    public void setIdentity_image(String identity_image) {
-        this.identity_image = identity_image;
+    public void setWorkstu1(String workstu1) {
+        this.workstu1 = workstu1;
+    }
+
+    public String getWorkstu2() {
+        return workstu2;
+    }
+
+    public void setWorkstu2(String workstu2) {
+        this.workstu2 = workstu2;
     }
 
     public Integer getIdentity_status() {
@@ -63,7 +73,8 @@ public class Identification {
         return "Identification{" +
                 "identity_id=" + identity_id +
                 ", identity_card='" + identity_card + '\'' +
-                ", identity_image='" + identity_image + '\'' +
+                ", workstu1='" + workstu1 + '\'' +
+                ", workstu2='" + workstu2 + '\'' +
                 ", Identity_status=" + Identity_status +
                 ", identity_person=" + identity_person +
                 '}';

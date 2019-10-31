@@ -11,6 +11,40 @@ public class Works {
     private String   works_image;//  作品截图
     private Integer works_person;//所属人
 
+
+    private String skill_name;//技能名称
+    private String skill_evaluate;// 经验自评
+
+    public Works(Integer works_id, String works_name, String works_trade, String works_keyword, String works_href, String works_image, Integer works_person, String skill_name, String skill_evaluate) {
+        this.works_id = works_id;
+        this.works_name = works_name;
+        this.works_trade = works_trade;
+        this.works_keyword = works_keyword;
+        this.works_href = works_href;
+        this.works_image = works_image;
+        this.works_person = works_person;
+        this.skill_name = skill_name;
+        this.skill_evaluate = skill_evaluate;
+    }
+
+
+
+    public String getSkill_name() {
+        return skill_name;
+    }
+
+    public void setSkill_name(String skill_name) {
+        this.skill_name = skill_name;
+    }
+
+    public String getSkill_evaluate() {
+        return skill_evaluate;
+    }
+
+    public void setSkill_evaluate(String skill_evaluate) {
+        this.skill_evaluate = skill_evaluate;
+    }
+
     public Works() {
     }
 
